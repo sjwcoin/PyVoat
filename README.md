@@ -12,6 +12,7 @@ A simple python3 Wrapper for Voat.co's API
     import json
     import PyVoat
     v = PyVoat.PyVoat()
+    
     messages = v.getAllMessages()
     user = v.getUser("healdb")
     subverse = v.getSubverse("api")
