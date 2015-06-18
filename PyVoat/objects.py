@@ -27,6 +27,7 @@ class submission:
         data = decoded['data']
         return data
     def getComments(self):
+        v = PyVoat.PyVoat()
         response = requests.get(frontpoint + "v/"+self.subverse+"/"+self.id+"/comments", headers=headers)
         json_input = response.json()
         decoded = json.dumps(json_input)
@@ -62,7 +63,7 @@ class user:
         data = decoded['data']
         return data
     def getComments(self):
-        v = voat.Voat()
+        v = PyVoat.PyVoat()
         response = requests.get(frontpoint + "u/"+self.user+"/comments", headers=headers)
         json_input = response.json()
         decoded = json.dumps(json_input)
@@ -76,7 +77,7 @@ class user:
             time.sleep(2)
         return comments
     def getSubmissions(self):
-        v = voat.Voat()
+        v = PyVoat.PyVoat()
         response = requests.get(frontpoint + "u/"+self.user+"/submissions", headers=headers)
         json_input = response.json()
         decoded = json.dumps(json_input)
@@ -118,7 +119,7 @@ class subverse:
         data = decoded['data']
         return data
     def getSubmissions(self):
-        v = voat.Voat()
+        v = PyVoat.PyVoat()
         response = requests.get(frontpoint + "v/"+self.subverse, headers=headers)
         json_input = response.json()
         decoded = json.dumps(json_input)
@@ -132,7 +133,7 @@ class subverse:
             time.sleep(2)
         return posts
     def getComments(self):
-        v = voat.Voat()
+        v = PyVoat.PyVoat()
         response = requests.get(frontpoint + "v/"+self.subverse, headers=headers)
         json_input = response.json()
         decoded = json.dumps(json_input)
