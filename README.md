@@ -9,36 +9,23 @@ A simple python3 Wrapper for Voat.co's API
 
 <h2>Example</h2>
 <h3>This is an example of how to use PyVoat from example.py</h3>
-import json
-
-import PyVoat
-
-v = PyVoat.PyVoat()
-
-messages = v.getAllMessages()
-
-user = v.getUser("healdb")
-
-subverse = v.getSubverse("api")
+    import json
+    import PyVoat
+    v = PyVoat.PyVoat()
+    messages = v.getAllMessages()
+    user = v.getUser("healdb")
+    subverse = v.getSubverse("api")
 
 #Loop through all unread messages
-for message in messages:
-
-  print(message.author)
-  
-  print(message.body)
-
-print(user.getInfo())
+    for message in messages:
+      print(message.author)
+      print(message.body)
+      print(user.getInfo())
 
 #Loops through each post in the subverse
-submissions = subverse.getSubmissions()
-
-for post in submissions:
-
-  print(post.author)
-  
-  comments= post.getComments()
-  
-  for comment in comments:
-  
-    print(comment.body)
+    submissions = subverse.getSubmissions()
+    for post in submissions:
+      print(post.author)
+      comments= post.getComments()
+      for comment in comments:
+      print(comment.body)
