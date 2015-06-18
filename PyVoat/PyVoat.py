@@ -2,7 +2,7 @@ import requests
 import json
 import objects
 frontpoint = "https://fakevout.azurewebsites.net/api/"
-class Voat:
+class PyVoat:
     def __init__(self):
         f=open("config.txt")
         lines=f.readlines()
@@ -72,4 +72,3 @@ class Voat:
         decoded = json.loads(decoded)
         data = decoded
         return data
-    
