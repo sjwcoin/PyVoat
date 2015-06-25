@@ -1,7 +1,7 @@
 import json
 import PyVoat
 
-v = PyVoat.PyVoat()
+v = PyVoat.PyVoat("token","pubkey")
 
 messages = v.getAllMessages()
 user = v.getUser("healdb")
