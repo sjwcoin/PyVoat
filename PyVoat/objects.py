@@ -28,7 +28,7 @@ class submission:
         return data
     def getComments(self):
         v = PyVoat.PyVoat(self.token,self.pubkey)
-        response = requests.get(frontpoint + "v/"+self.subverse+"/"++str(self.id)+"/comments", headers=self.headers)
+        response = requests.get(frontpoint + "v/"+self.subverse+"/"+str(self.id)+"/comments", headers=self.headers)
         json_input = response.json()
         decoded = json.dumps(json_input)
         decoded = json.loads(decoded)
